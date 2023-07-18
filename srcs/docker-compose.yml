@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  front:
+    container_name: front
+    build: ./front
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - front_vol:/front/my-app/src
+      # - ${PWD}/data:/front/my-app/src
+    env_file:
+      - .env
+
+volumes:
+  front_vol:
+    driver_opts:
+      type: none
+      device: ${PWD}/data
+      o: bind
