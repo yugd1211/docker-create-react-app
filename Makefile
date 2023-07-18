@@ -1,7 +1,6 @@
 all : up
 
 up:
-	mkdir -p /Users/gyyu/transcendence/data/front
 	docker compose -f ./srcs/docker-compose.yml up --build
 
 down:
