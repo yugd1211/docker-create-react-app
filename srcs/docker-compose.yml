@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 services:
   front:
@@ -8,7 +8,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - front_vol:/front/my-app/src
+      - front_vol:/front/my-app
       # - ${PWD}/data:/front/my-app/src
     env_file:
       - .env
@@ -17,5 +17,5 @@ volumes:
   front_vol:
     driver_opts:
       type: none
-      device: ${PWD}/data
+      device: ${PWD}/my-app
       o: bind
